@@ -727,9 +727,9 @@ def fields2pelican(
 
                 fp.write(new_content)
 
-            parse_raw = '--parse-raw' if not strip_raw else ''
-            cmd = ('pandoc --normalize {0} --from=html'
-                   ' --to={1} -o "{2}" "{3}"')
+            parse_raw = ''
+            cmd = ('pandoc {0} --from=html'
+                   ' --to={1}+raw_html -o "{2}" "{3}"')
             cmd = cmd.format(parse_raw, out_markup,
                              out_filename, html_filename)
 
